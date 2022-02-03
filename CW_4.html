@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function add(a = 0,b = 0) {
+      return a + b;
+    };
+    function multipe(a = 0,b = 0) {
+      return a * b;
+    };
+    function division(a = 0,b = 0) {
+      if (b == 0) {
+        return "Error. Деление на ноль невозможно";
+      };
+      return a / b;
+    };
+    function subtraction(a = 0,b = 0) {
+      return a - b;
+    };
+
+    function calculate(c,d,f) {
+      if (arguments.length !== 3) {
+        return "Error. Количество аргументов не соответсвует";
+      }
+      return f(c,d);
+    };
+
+    var num1 = +prompt("Введите первое число");
+    var num2 = +prompt("Введите второе число");
+    var fc = prompt("Введите математическое действие");
+
+    switch (fc) {
+      case "+":
+      document.write(calculate(num1,num2,add));
+        break;
+      case "*":
+      document.write(calculate(num1,num2,multipe));
+        break;
+      case "/":
+      document.write(calculate(num1,num2,division));
+        break;
+      case "-":
+      document.write(calculate(num1,num2,subtraction));
+        break;
+      case null:
+      document.write(calculate(num1,num2));
+        break;
+      default:
+      document.write("Error. Нет такого математического действия")
+    }
+  </script>
+</body>
+</html>
